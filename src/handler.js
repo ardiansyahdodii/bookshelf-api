@@ -57,4 +57,22 @@ export const addBookHandler = (request, h) => {
     response.code(500);
 
     return response;
-} 
+}
+
+export const getAllBooksHandler = (request, h) => {
+
+    const response = h.response({
+        status: 'success',
+        data: {
+            books: books.map((book) => ({
+                id: book.id,
+                name: book.name,
+                publisher: book.publisher
+            }))
+        }
+    })
+
+    response.code(200)
+
+    return response
+}
