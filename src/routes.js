@@ -1,4 +1,4 @@
-import { addBookHandler, editBookByIdHandler, getAllBooksHandler, getBookByIdHandler } from "./handler.js";
+import { addBookHandler, editBookByIdHandler, getAllBooksHandler, getBookByIdHandler, deleteBookByIdHandler } from "./handler.js";
 
 export const routes = [
     {
@@ -20,5 +20,10 @@ export const routes = [
         method: 'PUT',
         path: '/books/{id}',
         handler: editBookByIdHandler,
+    },
+    {
+        method: 'DELETE',
+        path: '/books/{id}',
+        handler: deleteBookByIdHandler,
     },
 ];
